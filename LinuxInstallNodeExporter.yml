@@ -11,7 +11,7 @@
       apt:
         upgrade: dist
       
- - name: Install Prometheus NodeExporter
+    - name: Install Prometheus NodeExporter
       apt:
         install: prometheus-node-exporter
           when: ansible_pkg_mgr == 'apt'  # Optional: ensures it's only run on Debian/Ubuntu systems
