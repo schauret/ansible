@@ -3,14 +3,6 @@
   become: true
 
   tasks:
-    - name: Update APT package cache
-      apt:
-        update_cache: yes
-
-    - name: Upgrade all APT packages
-      apt:
-        upgrade: dist
-      
     - name: Install Prometheus NodeExporter
       apt:
         install: prometheus-node-exporter
