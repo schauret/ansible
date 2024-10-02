@@ -1,8 +1,5 @@
 ---
 - hosts: all
-  become: true
-
   tasks:
-    - name: Install Prometheus NodeExporter
-      apt:
-        install: prometheus-node-exporter
+  - name : Install Prometheus NodeExporter package
+    apt: name=prometheus-node-exporter state=present update_cache=true
