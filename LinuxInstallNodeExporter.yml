@@ -10,7 +10,8 @@
     - name: Upgrade all APT packages
       apt:
         upgrade: dist
-      when: ansible_pkg_mgr == 'apt'  # Optional: ensures it's only run on Debian/Ubuntu systems
+      
  - name: Install Prometheus NodeExporter
       apt:
         install: prometheus-node-exporter
+          when: ansible_pkg_mgr == 'apt'  # Optional: ensures it's only run on Debian/Ubuntu systems
