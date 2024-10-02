@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Update APT package cache
+      apt:
+        update_cache: yes
+
+    - name: Upgrade all APT packages
+      apt:
+        upgrade: dist
+      when: ansible_pkg_mgr == 'apt'  # Optional: ensures it's only run on Debian/Ubuntu systems
+ - name: Install Prometheus NodeExporter
+      apt:
+        install: prometheus-node-exporter
